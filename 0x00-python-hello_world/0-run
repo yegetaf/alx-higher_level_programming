@@ -1,2 +1,8 @@
-#!/bin/bash
-python3 $PYFILE
+pyfile=$PYFILE
+# Check if the Python file exists
+if [ ! -f "$pyfile" ]; then
+  echo "Error: Python file $pyfile not found."
+  exit 1
+fi
+# Run the Python script
+python3 $pyfile
